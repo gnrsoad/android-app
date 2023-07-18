@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         editTextPhone = findViewById(R.id.editTextPhone);
 
+
         click();
     }
 
