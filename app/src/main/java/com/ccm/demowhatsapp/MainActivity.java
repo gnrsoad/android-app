@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.net.URI;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button button;
     private EditText editTextPhone;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +29,18 @@ public class MainActivity extends AppCompatActivity {
         editTextPhone = findViewById(R.id.editTextPhone);
 
 
+
+
+
         click();
     }
 
     public void click() {
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String phoneNumber = editTextPhone.getText().toString();
 
                 if (phoneNumber.isEmpty()) {
@@ -43,12 +51,17 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(url));
                     startActivity(intent);
+                    editTextPhone.getText().clear();
                 }
+
             }
         });
     }
 
+
+
     private void showMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+      
 }
